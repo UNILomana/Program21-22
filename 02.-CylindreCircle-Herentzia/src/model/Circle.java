@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.Objects;
+
 /**
  *
  * @author lomana.markel
@@ -54,4 +56,33 @@ public class Circle {
    public double getArea() {
       return radius * radius * Math.PI;
    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Circle other = (Circle) obj;
+        if (Double.doubleToLongBits(this.radius) != Double.doubleToLongBits(other.radius)) {
+            return false;
+        }
+        if (!Objects.equals(this.color, other.color)) {
+            return false;
+        }
+        return true;
+    }
+    
+   
 }

@@ -37,5 +37,6 @@ public class TestCylinder {
          + ", Volume is " + cy2.getVolume());
       //Radius is 2.0, Height is 5.0, Color is red,
       //Base area is 12.566370614359172, Volume is 62.83185307179586
+       System.out.println(cy1.equals(cy2));
    }
 }
