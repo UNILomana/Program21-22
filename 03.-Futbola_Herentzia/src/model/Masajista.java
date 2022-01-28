@@ -9,11 +9,12 @@ package model;
  *
  * @author lomana.markel
  */
-public class Masajista {
+public class Masajista extends IntegranteSeleccion {
     private String titulacion;
     private int aniosExperiencia;
 
-    public Masajista(String titulacion, int aniosExperiencia) {
+    public Masajista(int id, String nombre, String apellidos, int edad, String titulacion, int aniosExperiencia) {
+        super(id, nombre, apellidos, edad);
         this.titulacion = titulacion;
         this.aniosExperiencia = aniosExperiencia;
     }
@@ -35,5 +36,14 @@ public class Masajista {
     }
     public void darMasaje(){
         System.out.println("Esta dando un masaje");
+    }
+     @Override
+    public String toString() {
+        return "  ID: " + id +
+               ", Nombre: " + nombre +
+               ", Apellidos: " + apellidos +
+               ", Edad: " + edad + 
+               ", Titulación: " + titulacion +
+               ", Años de experiencia: " + aniosExperiencia;
     }
 }

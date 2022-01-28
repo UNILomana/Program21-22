@@ -83,4 +83,5 @@ public class IntegranteSeleccion {
     public void viajar(){
         System.out.println("Taldea bidaiatzera doa.");
     }
+    
 }

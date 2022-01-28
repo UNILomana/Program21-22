@@ -50,11 +50,11 @@ public class Entrenador extends IntegranteSeleccion {
 
     @Override
     public String toString() {
-        return "Entrenador{" + "idFederacion=" + idFederacion + 
-                                ", ID: " + id +
-                                ", Nombre: " + nombre +
-                                ", Apellidos: " + apellidos +
-                                ", Edad: " + edad + '}';
+        return  "  ID: " + id +
+                ", Nombre: " + nombre +
+                ", Apellidos: " + apellidos +
+                ", Edad: " + edad + 
+                ", idFederacion=" + idFederacion;
     }
     
 }

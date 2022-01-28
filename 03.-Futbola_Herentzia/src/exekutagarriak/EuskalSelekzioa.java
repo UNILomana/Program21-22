@@ -110,8 +110,8 @@ public class EuskalSelekzioa {
         konbokatuak.add(new Entrenador("EH", ++azkenId,"Joseba","Nuñez", 45));
         konbokatuak.add(new Entrenador("EH", ++azkenId,"Markel","Lautahandi", 35));
         
-        konbokatuak.add(new Masajista("EH", ++azkenId,"Markel","Lautahandi", 35));
-        konbokatuak.add(new Masajista("EH", ++azkenId,"Markel","Lautahandi", 35));
+        konbokatuak.add(new Masajista(++azkenId, "Iñaki", "Sertxiberrieta", 50, "Fisioterapeuta", 20));
+        konbokatuak.add(new Masajista(++azkenId, "Ander", "Etxeburu", 30, "Medico", 5));
     }
 
     /**
