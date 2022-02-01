@@ -8,16 +8,18 @@ package exekutagarriak;
 import enumak.Demarkazioa;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import model.*;
 
 /**
  *
  * @author lomana.markel
  */
-public class PartidakKudeatu extends Partida{
+public class PartidakKudeatu extends Partida {
 
+    //dena egin behar dA
     public static ArrayList<IntegranteSeleccion> konbokatuak = new ArrayList<>();
-    public static ArrayList<IntegranteSeleccion> partidaBalioa = new ArrayList<>(20);
+
     public static int azkenId = 0;
 
     public static ArrayList<IntegranteSeleccion> selekzioOsoaSortu() {
@@ -72,16 +74,35 @@ public class PartidakKudeatu extends Partida{
 
         return konbokatuak;
     }
-    
-    public static ArrayList<IntegranteSeleccion> partidaBalioa(){
-        
-        return null; 
+
+    public static ArrayList<IntegranteSeleccion> partidaBalioa() {
+
+        return null;
     }
-            
+
+    public static void partidakAsmatu() {
+        Partida[] partidak = new Partida[20];
+        
+
+        partidak[0] = new Partida(LocalDate.parse("2011-02-02"), "Betis");
+        partidak[1] = new Partida(LocalDate.parse("2020-01-12"), "Barcelona");
+        partidak[2] = new Partida(LocalDate.parse("2022-06-15"), "fuenla");
+        partidak[3] = new Partida(LocalDate.parse("2021-05-31"), "Huesca");
+        partidak[4] = new Partida(LocalDate.parse("2019-10-02"), "Tenerife");
+
+        for (int i = 0; i < partidak.length; i++) {
+            if (partidak[i] != null) {
+                System.out.println(partidak[i]);
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
         selekzioOsoaSortu();
-        
-        
+        partidakAsmatu();
+        partidaBatenDatuakEskatu();
+
     }
 
     public PartidakKudeatu(LocalDate data, String aurkaria) {

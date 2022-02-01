@@ -6,6 +6,7 @@
 package model;
 
 import enumak.Demarkazioa;
+import java.util.Comparator;
 
 /**
  *
@@ -62,7 +63,14 @@ public class Futbolista extends IntegranteSeleccion{
     public void jugarPartido(){
         System.out.println("Jokalaria partidua jolastera doa.");
     }
-
+    /*public static Comparator<Futbolista> apeComparator = new Comparator<Futbolista>(){
+        public int compare(Futbolista f1, Futbolista f2){
+            
+            
+        String compareApe1=;
+        /* For Ascending order
+        return this.apellidos-compareApe;
+     }*/
     @Override
     public String toString() {
         return  "Id: " + id +

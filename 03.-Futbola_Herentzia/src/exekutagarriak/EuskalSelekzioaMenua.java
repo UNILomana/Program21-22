@@ -13,7 +13,10 @@ import enumak.Demarkazioa;
 import model.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import static java.util.Collections.list;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -43,6 +46,7 @@ public class EuskalSelekzioaMenua {
     public static int azkenId = 0;
     public static ArrayList<IntegranteSeleccion> konbokatuak = new ArrayList<>();
 
+    //konbokatuak sortu
     public static ArrayList<IntegranteSeleccion> selekzioOsoaSortu() {
         //ArrayList<IntegranteSeleccion> konbokatuak = new ArrayList<IntegranteSeleccion>(); Goian Statiko moduan
 
@@ -74,6 +78,7 @@ public class EuskalSelekzioaMenua {
         return konbokatuak;
     }
 
+    // bukatua
     public static void partaideakIkusi() {
         System.out.println("Partaideak");
         System.out.println("=================");
@@ -87,6 +92,7 @@ public class EuskalSelekzioaMenua {
 
     }
 
+    //bukatua taldeka 
     public static void partaideTaldekatuakIkusi() {
         System.out.println("Partaide Taldekatuak");
         System.out.println("=================");
@@ -121,21 +127,69 @@ public class EuskalSelekzioaMenua {
         }
         System.out.println("");
     }
-     public static void futbolariakAlfabetikoki() {
+
+    //sort egin behar da
+    public static void futbolariakAlfabetikoki() {
         System.out.println("Jokalariak Alfabetikoki");
         System.out.println("=================");
-
+        
+        
+        konbokatuak.get(1).getApellidos();
+       
+        
+Collections.sort((List<T>) konbokatuak.get(1), Collections.reverseOrder())
+        /*Bistaratzeko*/
         for (int i = 0; i < konbokatuak.size(); ++i) {
-            Collections.sort(konbokatuak.get(i).getApellidos());
-            if (konbokatuak.get(i).getClass() == Futbolista.class) {
-                
-
+          konbokatuak.sort(IntegranteSeleccion);
+            if (konbokatuak.get(i) != null) {
                 System.out.println(konbokatuak.get(i));
             }
         }
         System.out.println("");
-     }
+        
+    }
+    public static void partaideAldaketak() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Aldaketa");
+        System.out.println("=================");
+        System.out.print("Zein ID-ren gatik aldatu nahi duzu? ");
+        int idViejo = sc.nextInt() - 1;
+        String izena = "Markel";
+        String abizena = "Lomana";
+        int adina = 21;
+        
+        konbokatuak.get(idViejo).setNombre(izena);
+        konbokatuak.get(idViejo).setApellidos(abizena);
+        konbokatuak.get(idViejo).setEdad(adina);
+       
+        for (int i = 0; i < konbokatuak.size(); ++i) {
+          
+            if (konbokatuak.get(i) != null) {
+                System.out.println(konbokatuak.get(i));
+            }
+        }
+        System.out.println("");
+        
+    }
 
+    public static void bilatuAbizena() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Aldaketa");
+        System.out.println("=================");
+        System.out.print("Zein abizen bilatu nahi duzu? ");
+        String abizena = sc.next();
+        
+            
+        for (int i = 0; i < konbokatuak.size(); ++i) {
+          
+            if (konbokatuak.get(i).getApellidos().equals(abizena)) {
+                System.out.println(konbokatuak.get(i));
+            }
+        }
+        System.out.println("");
+        
+    }
+    //main bukatua
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         selekzioOsoaSortu();
@@ -166,7 +220,7 @@ public class EuskalSelekzioaMenua {
                     futbolariakAlfabetikoki();
                     break;
                 case 4:
-                    partaideAldaketak();
+                   partaideAldaketak();
                     break;
                 case 5:
                     bilatuAbizena();
