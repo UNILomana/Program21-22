@@ -83,5 +83,11 @@ public class IntegranteSeleccion {
     public void viajar(){
         System.out.println("Taldea bidaiatzera doa.");
     }
+
+    @Override
+    public String toString() {
+        return "IntegranteSeleccion{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad + '}';
+    }
+    
     
 }

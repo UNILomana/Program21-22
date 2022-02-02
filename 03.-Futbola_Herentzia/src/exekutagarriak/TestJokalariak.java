@@ -21,7 +21,7 @@ public class TestJokalariak {
         
         ArrayList<Futbolista> konbokatuak = new ArrayList<Futbolista>();
 
-        konbokatuak.add(11,"Iñigo","da",35);
+        
         //konbokatuak.add(super,super.nombre,super.apellidos,super.edad);
     }
 }

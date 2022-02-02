@@ -19,6 +19,7 @@ import static java.util.Collections.list;
 import java.util.List;
 import java.util.Scanner;
 
+/*BUKATUA DAGO*/
 /**
  * Programa honetan Euskal Selekzioaren datuekin egingo dugu lan. Iturria:
  * https://es.wikipedia.org/wiki/Selecci%C3%B3n_de_f%C3%BAtbol_de_Euskadi#Plantilla
@@ -73,7 +74,7 @@ public class EuskalSelekzioaMenua {
         konbokatuak.add(new Entrenador("EH", ++azkenId, "Markel", "Lautahandi", 35));
 
         konbokatuak.add(new Masajista(++azkenId, "Iñaki", "Sertxiberrieta", 50, "Fisioterapeuta", 20));
-        konbokatuak.add(new Masajista(++azkenId, "Ander", "Etxeburu", 30, "Medico", 5));
+        konbokatuak.add(new IntegranteSeleccion(++azkenId, "Ander", "Etxeburu", 30));
 
         return konbokatuak;
     }
@@ -128,26 +129,25 @@ public class EuskalSelekzioaMenua {
         System.out.println("");
     }
 
-    //sort egin behar da
+    /*EZ DUT SORT EGITEA LORTZEN*/
     public static void futbolariakAlfabetikoki() {
         System.out.println("Jokalariak Alfabetikoki");
         System.out.println("=================");
-        
-        
+
         konbokatuak.get(1).getApellidos();
-       
-        
-Collections.sort((List<T>) konbokatuak.get(1), Collections.reverseOrder())
+        //Collections.sort((List<T>) konbokatuak.get(1), Collections.reverseOrder())
+
         /*Bistaratzeko*/
         for (int i = 0; i < konbokatuak.size(); ++i) {
-          konbokatuak.sort(IntegranteSeleccion);
+            //  konbokatuak.sort(IntegranteSeleccion);
             if (konbokatuak.get(i) != null) {
                 System.out.println(konbokatuak.get(i));
             }
         }
         System.out.println("");
-        
+
     }
+
     public static void partaideAldaketak() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Aldaketa");
@@ -157,19 +157,19 @@ Collections.sort((List<T>) konbokatuak.get(1), Collections.reverseOrder())
         String izena = "Markel";
         String abizena = "Lomana";
         int adina = 21;
-        
+
         konbokatuak.get(idViejo).setNombre(izena);
         konbokatuak.get(idViejo).setApellidos(abizena);
         konbokatuak.get(idViejo).setEdad(adina);
-       
+
         for (int i = 0; i < konbokatuak.size(); ++i) {
-          
+
             if (konbokatuak.get(i) != null) {
                 System.out.println(konbokatuak.get(i));
             }
         }
         System.out.println("");
-        
+
     }
 
     public static void bilatuAbizena() {
@@ -178,17 +178,28 @@ Collections.sort((List<T>) konbokatuak.get(1), Collections.reverseOrder())
         System.out.println("=================");
         System.out.print("Zein abizen bilatu nahi duzu? ");
         String abizena = sc.next();
-        
-            
+
         for (int i = 0; i < konbokatuak.size(); ++i) {
-          
+
             if (konbokatuak.get(i).getApellidos().equals(abizena)) {
                 System.out.println(konbokatuak.get(i));
             }
         }
         System.out.println("");
-        
+
     }
+
+    public static void ezabatuPartaidea() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ezabaketa");
+        System.out.println("=================");
+        System.out.print("Zein Partaide(ID) ezabatu nahi duzu? ");
+        int id = sc.nextInt();
+
+        konbokatuak.remove(id-1);
+
+    }
+
     //main bukatua
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -203,7 +214,8 @@ Collections.sort((List<T>) konbokatuak.get(1), Collections.reverseOrder())
             System.out.println("3.- Futbolariak alfabetikoki inprimatu");
             System.out.println("4.- Aldaketa ( Sartu zaitez zu beste partaide baten ordez. Horretarako ArrayList-en set metodoa erabiliz)");
             System.out.println("5.- Bilatu abizenetik");
-            System.out.println("6.- Irten");
+            System.out.println("6.- Ezabatu Partaidea");
+            System.out.println("7.- Irten");
             System.out.println("");
             System.out.print("Aukeratu zenbaki bat: ");
             aukera = sc.nextInt();
@@ -220,18 +232,21 @@ Collections.sort((List<T>) konbokatuak.get(1), Collections.reverseOrder())
                     futbolariakAlfabetikoki();
                     break;
                 case 4:
-                   partaideAldaketak();
+                    partaideAldaketak();
                     break;
                 case 5:
                     bilatuAbizena();
                     break;
                 case 6:
+                    ezabatuPartaidea();
+                    break;
+                case 7:
                     System.out.println("Eskerrik asko programa hau erabiltzearren.");
                     break;
                 default:
                     System.out.println("Aukera okerra. Saiatu berriz.");
             }
-        } while (aukera != 6);
+        } while (aukera != 7);
     }
 
 }

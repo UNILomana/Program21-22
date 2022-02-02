@@ -17,9 +17,10 @@ public class Partida {
     String aurkaria;
     ArrayList <Futbolista> txartelakJarri = new ArrayList <Futbolista>();
 
-    public Partida(LocalDate data, String aurkaria) {
+    public Partida(LocalDate data, String aurkaria, ArrayList<Futbolista> txartelakJarri) {
         this.data = data;
         this.aurkaria = aurkaria;
+        this.txartelakJarri = txartelakJarri;
     }
 
     public LocalDate getData() {
@@ -55,7 +56,9 @@ public class Partida {
 
     @Override
     public String toString() {
-        return "Partida{" + "data=" + data + ", aurkaria=" + aurkaria + '}';
+        return "Partida{" + "Data= " + data + ", Aurkaria= " + aurkaria + ", Txartel Guztiak= " + txartelakJarri + '}';
     }
+
+    
     
 }

@@ -10,17 +10,25 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import model.*;
+import java.util.Scanner;
 
+/*LEHENENGO SELEKZIO OSOA SORTZEN DA,
+      5 PARTIDA SORTZEN DIRA AUTOMATIKOKI,
+      PARTIDA BAT SORTZEN DA ERABILTZAILEAREN DATUEKIN, 
+      AZKENIK, PARTIDAK BISTARATU.
+ */
 /**
  *
  * @author lomana.markel
  */
 public class PartidakKudeatu extends Partida {
 
-    //dena egin behar dA
     public static ArrayList<IntegranteSeleccion> konbokatuak = new ArrayList<>();
+    //public static ArrayList<Futbolista> txartelakJarri = new ArrayList<Futbolista>();
 
     public static int azkenId = 0;
+    public static int partidaId = 0;
+    public static Partida[] partidak = new Partida[20];
 
     public static ArrayList<IntegranteSeleccion> selekzioOsoaSortu() {
 
@@ -70,7 +78,7 @@ public class PartidakKudeatu extends Partida {
         konbokatuak.add(
                 new Masajista(++azkenId, "Iñaki", "Sertxiberrieta", 50, "Fisioterapeuta", 20));
         konbokatuak.add(
-                new Masajista(++azkenId, "Ander", "Etxeburu", 30, "Medico", 5));
+                new IntegranteSeleccion(++azkenId, "Ander", "Etxeburu", 30));
 
         return konbokatuak;
     }
@@ -80,32 +88,67 @@ public class PartidakKudeatu extends Partida {
         return null;
     }
 
+    public PartidakKudeatu(LocalDate data, String aurkaria, ArrayList txartelakJarri) {
+        super(data, aurkaria, txartelakJarri);
+    }
+
     public static void partidakAsmatu() {
-        Partida[] partidak = new Partida[20];
+        /*Partida bakoitzean ArrayList bat dago, beraz sortu egin behar dira hainbat
+          nahi beste txatelekin*/
+        ArrayList<Futbolista> txartelakJarri1 = new ArrayList<Futbolista>();    //1go partidako txartelak
+        txartelakJarri1.add((Futbolista) konbokatuak.get(1));                   //1.jokalariari txartela jarri
+        txartelakJarri1.add((Futbolista) konbokatuak.get(5));                   //5.jokalariari txartela jarri
+        txartelakJarri1.add((Futbolista) konbokatuak.get(6));                   //6.jokalariari txartela jarri
         
+        ArrayList<Futbolista> txartelakJarri2 = new ArrayList<Futbolista>();    //2go partidako txartelak
+        txartelakJarri2.add((Futbolista) konbokatuak.get(2));                   //2.jokalariari txartela jarri
+        txartelakJarri2.add((Futbolista) konbokatuak.get(3));                   //3.jokalariari txartela jarri
+        
+        ArrayList<Futbolista> txartelakJarri3 = new ArrayList<Futbolista>();    //3go partidako txartelak
+        txartelakJarri3.add((Futbolista) konbokatuak.get(10));                   //10.jokalariari txartela jarri
+        txartelakJarri3.add((Futbolista) konbokatuak.get(11));                   //11.jokalariari txartela jarri
+        
+        partidak[++partidaId] = new Partida(LocalDate.parse("2011-02-02"), "Betis", txartelakJarri1);
+        partidak[++partidaId] = new Partida(LocalDate.parse("2020-01-12"), "Barcelona", txartelakJarri2);
+        partidak[++partidaId] = new Partida(LocalDate.parse("2022-06-15"), "fuenla", txartelakJarri3);
+        partidak[++partidaId] = new Partida(LocalDate.parse("2021-05-31"), "Huesca", txartelakJarri1);      //Txartel berdinak daude jarrita
+        partidak[++partidaId] = new Partida(LocalDate.parse("2019-10-02"), "Tenerife", txartelakJarri3);    ////Txartel berdinak daude jarrita
 
-        partidak[0] = new Partida(LocalDate.parse("2011-02-02"), "Betis");
-        partidak[1] = new Partida(LocalDate.parse("2020-01-12"), "Barcelona");
-        partidak[2] = new Partida(LocalDate.parse("2022-06-15"), "fuenla");
-        partidak[3] = new Partida(LocalDate.parse("2021-05-31"), "Huesca");
-        partidak[4] = new Partida(LocalDate.parse("2019-10-02"), "Tenerife");
+    }
 
+    public static void partidaBatenDatuakEskatu() {
+        ArrayList<Futbolista> txartelakJarri4 = new ArrayList<Futbolista>();  
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Noiz jokatu zen partida(Adb: 2020-12-02)? ");
+        String data = sc.next();
+        System.out.print("Noren aurka jokatu zen?");
+        String taldea = sc.next();
+        System.out.print("Zenbatgarren jokalariari jarri nahi diozu txartela?");  //Oraingoz bakarrik txartel bat gehitu al da partidan 
+        int jokalaria = sc.nextInt();
+        txartelakJarri4.add((Futbolista) konbokatuak.get(jokalaria-1)); 
+
+        partidak[++partidaId] = new Partida(LocalDate.parse(data), taldea, txartelakJarri4);
+    }
+
+    public static void partidakIkusi() {
         for (int i = 0; i < partidak.length; i++) {
             if (partidak[i] != null) {
+                //System.out.println(partidak[i].toString());
                 System.out.println(partidak[i]);
             }
         }
+    }
 
+    public static void estatistikakKalkulatu() {
+        System.out.println("Jolastutako partida kopurua: " + partidaId);
     }
 
     public static void main(String[] args) {
         selekzioOsoaSortu();
         partidakAsmatu();
         partidaBatenDatuakEskatu();
-
+        partidakIkusi();
+        estatistikakKalkulatu();
     }
 
-    public PartidakKudeatu(LocalDate data, String aurkaria) {
-        super(data, aurkaria);
-    }
 }
