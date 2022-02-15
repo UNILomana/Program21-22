@@ -16,8 +16,14 @@ public class Erosketa {
     protected ArrayList<Integer> unitateak;
     protected double guztira;
 
-    public Erosketa(char[] kodea, Bezeroa bezeroa, double guztira) {
-        this.kodea = kodea;
+    public Erosketa(String kodea, LocalDate data, Bezeroa bezeroa, double guztira) {
+        this.kodea = new char[kodea.length()];
+
+        for (int i = 0; i < kodea.length(); i++) {
+            this.kodea[i] = kodea.charAt(i);
+        }
+        LocalDate dataErosketa = data;
+        this.data = dataErosketa;
         this.bezeroa = bezeroa;
         this.guztira = guztira;
     }
@@ -45,6 +51,14 @@ public class Erosketa {
             }
         }
         return false;
+    }
+
+    public void setKodea(String kodea) {
+        this.kodea = new char[kodea.length()];
+
+        for (int i = 0; i < kodea.length(); i++) {
+            this.kodea[i] = kodea.charAt(i);
+        }
     }
 
     public String getStrKodea() {

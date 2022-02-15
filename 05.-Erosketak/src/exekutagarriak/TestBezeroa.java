@@ -18,9 +18,13 @@ public class TestBezeroa {
         sortuProduktuak();
         erosketakIkusi();
         Produktua toshiba = new Produktua("C01", "Toshiba Satellite", 450);
-    Erosketa erosketa1 = new Erosketa("E18-01", bezeroak.get(1-1), 1000);
-   
-    Erosketa erosketa2 = new Erosketa("E18-01",02/02/2022, bezeroak.get(1-1),toshiba, 1,  1000);
+        ArrayList<Produktua> erositakoProduktuak = new ArrayList<>();
+        erositakoProduktuak.add(toshiba);
+        ArrayList<Integer> erosketaHonetakounitateak = new ArrayList<>();
+        erosketaHonetakounitateak.add(15);
+        
+        Erosketa erosketa1 = new Erosketa("E18-01", bezeroak.get(1 - 1), 1000);
+        Erosketa gaurkoErosketa = new Erosketa("E18-02", "2018-10-30", bezeroak.get(1 - 1), erositakoProduktuak,erosketaHonetakounitateak, 6750);
         System.out.println(erosketa1.toString());
     }
 
@@ -49,7 +53,7 @@ public class TestBezeroa {
             }
         }
         System.out.println("");
-        
+
         System.out.println("Bezero Enpresak");
         System.out.println("=================");
 
