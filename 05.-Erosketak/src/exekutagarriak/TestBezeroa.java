@@ -23,9 +23,9 @@ public class TestBezeroa {
         ArrayList<Integer> erosketaHonetakounitateak = new ArrayList<>();
         erosketaHonetakounitateak.add(15);
         
-        Erosketa erosketa1 = new Erosketa("E18-01", bezeroak.get(1 - 1), 1000);
+        //Erosketa erosketa1 = new Erosketa("E18-01", bezeroak.get(1 - 1), 1000);
         Erosketa gaurkoErosketa = new Erosketa("E18-02", "2018-10-30", bezeroak.get(1 - 1), erositakoProduktuak,erosketaHonetakounitateak, 6750);
-        System.out.println(erosketa1.toString());
+       // System.out.println(erosketa1.toString());
     }
 
     public static void sortuBezeroak() {

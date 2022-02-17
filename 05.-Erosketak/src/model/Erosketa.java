@@ -52,7 +52,8 @@ public class Erosketa {
         }
         return false;
     }
-
+    
+    
     public void setKodea(String kodea) {
         this.kodea = new char[kodea.length()];
 
@@ -63,6 +64,12 @@ public class Erosketa {
 
     public String getStrKodea() {
         return new String(kodea);
+    }
+    public double getGuztira(){
+        return guztira;
+    }
+    public Bezeroa getBezeroa(){
+        return bezeroa;
     }
 
     public String toStringLuzea() {
@@ -75,7 +82,7 @@ public class Erosketa {
                 + "\tHelbidea= " + bezeroa.getHelbidea() + "\n"
                 + "\tProduktuak= " + produktuak + "\n"
                 + "\tUnitateak= " + unitateak + "\n"
-                + "\tGUZTIRA= " + guztira + "€";
+                + "\tGUZTIRA= " + guztira + "€\n";
 
     }
 
