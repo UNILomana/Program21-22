@@ -25,14 +25,15 @@ public class Enpresa implements Bezeroa {
         this.kontaktuenEmailak = kontaktuenEmailak;
     }
 
-   
+    @Override
     public int getKodea() {
         return this.kodea=kodea;
     }
-
+    @Override
     public String getIzena() {
         return this.izenJuridikoa=izenJuridikoa;
     }
+    @Override
     public String getAbizena() {
         return this.izenKomertziala=izenKomertziala;
     }
@@ -41,7 +42,7 @@ public class Enpresa implements Bezeroa {
     public String getHelbidea() {
         return this.helbidea=helbidea;
     }
-
+    @Override
     public String getEmaila() {
         return this.kontaktuenEmailak[0]=kontaktuenEmailak[0];
 
