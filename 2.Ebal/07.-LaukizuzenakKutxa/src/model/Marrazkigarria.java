@@ -5,10 +5,16 @@
  */
 package model;
 
+import java.awt.Graphics;
+import javax.swing.JPanel;
+
 /**
  *
  * @author lomana.markel
  */
-public interface Marrazkigarria {
+/*public interface Marrazkigarria {
     public void marraztu();  
+}*/
+public interface Marrazkigarria {
+    public void marraztu(Graphics g);
 }

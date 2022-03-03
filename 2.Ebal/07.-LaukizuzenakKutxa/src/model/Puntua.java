@@ -6,6 +6,8 @@
 
 package model;
 import enumak.Norantza;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 /*DENA ONDO EGON BEHARKO ZEN*/
 /**
  * @author lomana.markel
@@ -118,6 +120,12 @@ public class Puntua implements Marrazkigarria {
         
         System.out.println(toString() + "-ra mugitu da.");
         
+    }
+
+    @Override
+    public void marraztu(Graphics g) {
+       Graphics2D g2 = (Graphics2D) g;
+       g2.drawLine(1,1,2,2);     
     }
    
 }

@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -82,4 +83,9 @@ public class Laukizuzena implements Marrazkigarria {
     public void jiratu(){
         
     }*/
+
+    @Override
+    public void marraztu(Graphics g) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
