@@ -124,8 +124,7 @@ public class Puntua implements Marrazkigarria {
 
     @Override
     public void marraztu(Graphics g) {
-       Graphics2D g2 = (Graphics2D) g;
-       g2.drawLine(1,1,2,2);     
+       g.drawLine(1,1,2,2);     
     }
    
 }

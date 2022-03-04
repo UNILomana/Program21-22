@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,7 +66,7 @@ public class Laukizuzena implements Marrazkigarria {
     public void marraztu() {
         System.out.println(this + "laukia GUI baten marraztua izan da.");
     }
-    
+
     //test2.java dago testeatua
     public boolean isInside(Puntua puntu1) {
 
@@ -78,14 +79,15 @@ public class Laukizuzena implements Marrazkigarria {
             return false;
         }
     }
-    
+
     /*
     public void jiratu(){
         
     }*/
-
     @Override
     public void marraztu(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        g.setColor(Color.blue);
+        g.drawRect(50, 50, 500, 500);
     }
+
 }
