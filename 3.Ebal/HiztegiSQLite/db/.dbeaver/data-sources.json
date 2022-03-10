@@ -1,0 +1,38 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-17f6e358f29-6d6b15990d5e56e3": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "HiztegiaDB",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\lomana.markel\\Documents\\GitHub\\Programazioa\\3. Ebaluazioa\\UD4\\HiztegiSQLite\\db\\Hiztegia.db",
+				"url": "jdbc:sqlite:C:\\Users\\lomana.markel\\Documents\\GitHub\\Programazioa\\3. Ebaluazioa\\UD4\\HiztegiSQLite\\db\\Hiztegia.db",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		}
+	},
+	"virtual-models": {
+		"sqlite_jdbc-17f6e358f29-6d6b15990d5e56e3": {
+			"@properties": {
+				"erd.diagram.state": {
+					"serialized": "<diagram version=\"1\" name=\"empty\" time=\"202203091412\"><entities><data-source id=\"sqlite_jdbc-17f6e358f29-6d6b15990d5e56e3\"><entity id=\"1\" name=\"Terminoak\" fq-name=\"Terminoak\" order=\"0\" x=\"44\" y=\"79\"/></data-source></entities><relations/></diagram>"
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
