@@ -1,0 +1,31 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-17f6e358f29-6d6b15990d5e56e3": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "Hiztegia.db",
+			"save-password": true,
+			"read-only": false,
+			"virtual-model-id": "sqlite_jdbc-17f6e18ff64-7e2ea8e140ef2830",
+			"configuration": {
+				"database": "C:\\Users\\lomana.markel\\Documents\\GitHub\\Programazioa\\3. Ebaluazioa\\UD4\\HiztegiSQLite\\db\\Hiztegia.db",
+				"url": "jdbc:sqlite:C:\\Users\\lomana.markel\\Documents\\GitHub\\Programazioa\\3. Ebaluazioa\\UD4\\HiztegiSQLite\\db\\Hiztegia.db",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
