@@ -49,8 +49,9 @@ public class Controller implements ActionListener {
                 view.jDialogTerminoaGehitu.setSize(500, 500);
                 break;
             case "IMPRIMATU":
+                model.connect(); //rekargatzeko datu basea
                 System.out.println("IMPRIMATZEKO botoia sakatu duzu");
-                model.terminoakImprimatu();//consolas imprimatu
+                //model.terminoakImprimatu();//consolas imprimatu
                 view.jDialogHiztegiaIkusi.setVisible(true);
                 view.jDialogHiztegiaIkusi.setSize(500, 500);
                 break;

@@ -25,6 +25,7 @@ public class TerminoenTableModel extends AbstractTableModel {
     private final String DB = "db/Hiztegia.db";
 
     public TerminoenTableModel(ArrayList<Terminoa> datuakArrayList) {
+        connect();
         this.data = datuakArrayList;
     }
 
@@ -93,18 +94,5 @@ public class TerminoenTableModel extends AbstractTableModel {
         }
         return false;
     }
-    /**
-     *
-     * @param value
-     * @param row
-     * @param col
-     * @return
-     */
-    /*@Override
-    public void setValueAt(Object value,int row, int col) {
-        data.get(row).setPrezioa((double) value);
-    }
-   /* public Object[][] getData(){
-        
-    }*/
+  
 }

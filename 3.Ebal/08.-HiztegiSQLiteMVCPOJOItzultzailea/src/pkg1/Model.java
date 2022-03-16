@@ -166,6 +166,7 @@ public class Model {
             while (rs.next()) {
                 Terminoa t1 = new Terminoa(rs.getInt("id"), rs.getString("euskaraz"), rs.getString("gazteleraz"));
                 erreTerminoak.add(t1);
+                
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
