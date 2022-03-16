@@ -34,7 +34,7 @@ public class Model {
     }
     public static Connection connect2() {
         // SQLite connection string
-        String url = "jdbc:sqlite: db/Hiztegia.db";
+        String url = "jdbc:sqlite:./db/Hiztegia.db";
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -160,7 +160,7 @@ public class Model {
         ArrayList<Terminoa> erreTerminoak = new ArrayList<>();
         String sql = "SELECT * FROM Terminoak";
         
-        try (Connection conn = this.connect2();
+        try (Connection conn = connect2();
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
