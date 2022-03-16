@@ -7,9 +7,9 @@ import pkg1.Model;
 
 /**
  * Kontrolatuko du view eta model-en arteko erlazioa
+ *
  * @author lomana.markel
  */
-
 public class Controller implements ActionListener {
 
     private Model model;
@@ -29,6 +29,7 @@ public class Controller implements ActionListener {
         view.jButtonTIkusi.addActionListener(listener);
         view.jButtonTGehitu.addActionListener(listener);
         view.jButtonIrten.addActionListener(listener);
+
     }
 
     @Override
@@ -38,27 +39,27 @@ public class Controller implements ActionListener {
         switch (actionCommand) {
             /*Botoi bakoitzeko case bat. "ezabatu, aldatu..."*/
             case "TXERTATU":
-                System.out.println("TXERTATU botoia sakatu duzu");
-                
-                Terminoa t = new Terminoa(view.jTextFieldEuskaraz.getText(),view.jTextFieldGazteleraz.getText());
-                //model.terminoaSartuObjektuGabe(t);
+                Terminoa t = new Terminoa(view.jTextFieldEuskaraz.getText(), view.jTextFieldGazteleraz.getText());
                 model.terminoaSartu(t);
-                model.terminoakImprimatu();
-            
+                System.out.println("Hitza sartu duzu.");
+                break;
             case "DIALOG":
+                System.out.println("Dialog terminoa gehitu zabaltzen");
                 view.jDialogTerminoaGehitu.setVisible(true);
-                view.jDialogTerminoaGehitu.setSize(900,900);
-                
-                
+                view.jDialogTerminoaGehitu.setSize(500, 500);
+                break;
             case "IMPRIMATU":
                 System.out.println("IMPRIMATZEKO botoia sakatu duzu");
                 model.terminoakImprimatu();//consolas imprimatu
                 view.jDialogHiztegiaIkusi.setVisible(true);
-                view.jDialogHiztegiaIkusi.setSize(900,900);
-                
+                view.jDialogHiztegiaIkusi.setSize(500, 500);
+                break;
             case "IRTEN":
-               //view.jButtonIrten.setVisible;
-                //close();
+                view.dispose();
+                break;
+            /*case "IRTEN2":
+                view.jDialogTerminoaGehitu.dispose();
+                break;*/
         }
     }
 
