@@ -1,0 +1,10 @@
+|id |euskaraz |gazteleraz|
+|---|---------|----------|
+|1  |mangoa   |mango     |
+|2  |marrubia |fresa     |
+|3  |platanoa |platano   |
+|4  |mahaia   |mesa      |
+|5  |Mugikorra|Telefono  |
+|6  |argia    |luz       |
+|7  |Hitza    |Palabra   |
+|19 |AAAA     |AAAA      |
