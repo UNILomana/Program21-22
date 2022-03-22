@@ -17,11 +17,6 @@ public class Terminoa {
     private String  gazteleraz;
 
     public Terminoa(String euskaraz, String gazteleraz) {
-        
-        this.euskaraz = euskaraz;
-        this.gazteleraz = gazteleraz;
-    }
-    public Terminoa(int id, String euskaraz, String gazteleraz) {
         this.id = id;
         this.euskaraz = euskaraz;
         this.gazteleraz = gazteleraz;
